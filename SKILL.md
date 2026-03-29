@@ -24,7 +24,7 @@ Treat these as the default expectations unless the user asks otherwise:
 - Paper size: A4
 - Primary mode: `print-formal`
 - Chinese body font: `LXGW WenKai`
-- Body size: `30pt` target in the template, then verify against actual PDF output and tune by measured results rather than trusting template numbers.
+- Body size: `17pt` via anyfontsize (forced in template). Template fontsize parameters can be misleading; always verify against actual PDF output if in doubt.
 - Page numbers: enabled
 - Margins: print-friendly
 - Markdown syntax must render into real formatting; do not leave `#`, `**`, or backticks visible unless the source intentionally shows literal Markdown.
