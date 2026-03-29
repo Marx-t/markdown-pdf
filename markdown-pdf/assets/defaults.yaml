@@ -1,0 +1,12 @@
+from: markdown
+pdf-engine: xelatex
+standalone: true
+number-sections: false
+variables:
+  geometry:
+    - a4paper
+    - top=2.3cm
+    - bottom=2.3cm
+    - left=1.8cm
+    - right=1.8cm
+  colorlinks: true

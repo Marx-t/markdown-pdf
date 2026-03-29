@@ -1,0 +1,56 @@
+% print-formal template for markdown-pdf
+\documentclass[12pt]{article}
+\usepackage[a4paper,top=2.3cm,bottom=2.3cm,left=1.8cm,right=1.8cm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{$if(mainfont)$$mainfont$$else$LXGW WenKai$endif$}
+\setCJKmainfont{$if(mainfont)$$mainfont$$else$LXGW WenKai$endif$}
+\setCJKsansfont{WenQuanYi Zen Hei}
+\setmonofont{LXGW WenKai Mono}
+\setCJKmonofont{LXGW WenKai Mono}
+\usepackage{hyperref}
+\usepackage{xcolor}
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+\hypersetup{colorlinks=true,linkcolor=[RGB]{28,92,160},urlcolor=[RGB]{28,92,160},citecolor=[RGB]{28,92,160}}
+\usepackage{amssymb}
+\usepackage{longtable,array,colortbl}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{fvextra}
+\usepackage[most]{tcolorbox}
+\usepackage{etoolbox}
+\usepackage{anyfontsize}
+\fontsize{17pt}{22pt}\selectfont
+\definecolor{shadecolor}{RGB}{247,248,250}
+\arrayrulecolor{black}
+\setlength{\arrayrulewidth}{0.5pt}
+\setlength{\tabcolsep}{7pt}
+\renewenvironment{quote}{\begin{list}{}{\leftmargin=1.2em\rightmargin=0.6em}\item\relax\itshape\color[rgb]{0.22,0.22,0.22}}{\end{list}}
+\BeforeBeginEnvironment{Shaded}{\begin{tcolorbox}[enhanced,breakable,colback=shadecolor,colframe=shadecolor,arc=5mm,boxrule=0pt,left=2.3mm,right=2.3mm,top=1.7mm,bottom=1.7mm]}
+\AfterEndEnvironment{Shaded}{\end{tcolorbox}}
+\BeforeBeginEnvironment{verbatim}{\begin{tcolorbox}[enhanced,breakable,colback=shadecolor,colframe=shadecolor,arc=5mm,boxrule=0pt,left=2.3mm,right=2.3mm,top=1.7mm,bottom=1.7mm]}
+\AfterEndEnvironment{verbatim}{\end{tcolorbox}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0.08em}\setlength{\parskip}{0pt}}
+\setstretch{1.05}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead{}\fancyfoot[C]{\thepage}}
+% Body=17pt. Headings: section 22pt (1.29×), subsection 19pt (1.12×), subsubsection 17pt (≈body)
+\titleformat{\section}{\sffamily\bfseries\fontsize{22pt}{26pt}\selectfont}{}{0pt}{}
+\titleformat{\subsection}{\sffamily\bfseries\fontsize{19pt}{23pt}\selectfont}{}{0pt}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\fontsize{17pt}{21pt}\selectfont}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.4em}{0.1em}
+\titlespacing*{\subsection}{0pt}{0.32em}{0.07em}
+\titlespacing*{\subsubsection}{0pt}{0.24em}{0.05em}
+\AtBeginEnvironment{longtable}{\fontsize{14pt}{16pt}\selectfont}
+\begin{document}
+\thispagestyle{plain}
+$body$
+\end{document}
